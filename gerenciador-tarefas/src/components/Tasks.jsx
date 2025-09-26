@@ -23,14 +23,8 @@ function Tasks({ tasks, onTaskClick, onTrashClick }) {
                 task.isCompleted ? "line-through text-green-300" : "text-white"
               }`}
             >
-              {task.isCompleted ? (
-                <>
-                  <Check />
-                  {task.title}
-                </>
-              ) : (
-                task.title
-              )}
+              {task.isCompleted && <Check />}
+              {task.title}
             </button>
             <Button onClick={() => onSeeDetailsClick(task)}>
               <ChevronRightIcon />
